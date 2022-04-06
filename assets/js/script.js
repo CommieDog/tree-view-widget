@@ -22,7 +22,14 @@ function populateTreeViewWidget()
 function generateTreeViewWidget(name)
 {
     const content = $("<div>");
-    content.append(name + "<ul></ul>");
+    const expandIcon = $("<div>");
+
+    expandIcon.append("&nbsp;+&nbsp;");
+    expandIcon.addClass("expand-icon");
+
+    content.append(expandIcon);
+    content.append(name);
+    content.append("<ul></ul>");
     content.addClass("tree-view-content");
     return content;
 }
@@ -37,3 +44,13 @@ function addChildWidgets(parent, children)
 }
 
 populateTreeViewWidget();
+
+treeViewWidgetElement.on("click", function(event)
+{
+    var target = event.target;
+    target = $(target);
+    if(target.hasClass("expand-icon"))
+    {
+        target.parent().children("ul").addClass("expanded");
+    }
+});
