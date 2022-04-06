@@ -51,6 +51,6 @@ treeViewWidgetElement.on("click", function(event)
     target = $(target);
     if(target.hasClass("expand-icon"))
     {
-        target.parent().addClass("expanded");
+        target.parent().children("ul").addClass("expanded");
     }
 });

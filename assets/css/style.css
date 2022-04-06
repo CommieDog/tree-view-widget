@@ -19,6 +19,10 @@ h1 {
     margin: 3px;
 }
 
+.tree-view-content ul {
+    display: none; /* Hide by default */
+}
+
 .expand-icon {
     display: inline;
     margin: 4px 10px 4px 0px;
@@ -27,6 +31,6 @@ h1 {
     border: 1px solid black;
 }
 
-.expanded {
-    background-color: lightpink;
+ul.expanded {
+    display: block; /* Show when expanded */
 }
