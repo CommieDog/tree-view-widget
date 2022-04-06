@@ -44,3 +44,13 @@ function addChildWidgets(parent, children)
 }
 
 populateTreeViewWidget();
+
+treeViewWidgetElement.on("click", function(event)
+{
+    var target = event.target;
+    target = $(target);
+    if(target.hasClass("expand-icon"))
+    {
+        target.parent().addClass("expanded");
+    }
+});
