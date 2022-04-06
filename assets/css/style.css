@@ -1,0 +1,9 @@
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: lightgray;
+}
+
+#tree-view-widget {
+    min-height: 250px;
+    border: 1px solid black;
+}
