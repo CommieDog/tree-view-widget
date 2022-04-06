@@ -24,7 +24,7 @@ function generateTreeViewWidget(name)
     const content = $("<div>");
     const expandIcon = $("<div>");
 
-    expandIcon.append("+");
+    expandIcon.append("&nbsp;+&nbsp;");
     expandIcon.addClass("expand-icon");
 
     content.append(expandIcon);
