@@ -19,18 +19,18 @@ h1 {
     margin: 3px;
 }
 
-.tree-view-content ul {
-    display: none; /* Hide by default */
-}
-
-.expand-icon {
+.expand-icon  {
     display: inline;
     margin: 4px 10px 4px 0px;
+    font-family: monospace;
     text-align: center;
-    background-color: lightgreen;
     border: 1px solid black;
 }
 
-ul.expanded {
+.expanded>ul {
     display: block; /* Show when expanded */
+}
+
+.collapsed>ul {
+    display: none; /* Hide when collapsed */
 }

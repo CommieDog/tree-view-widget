@@ -24,13 +24,13 @@ function generateTreeViewWidget(name)
     const content = $("<div>");
     const expandIcon = $("<div>");
 
-    expandIcon.append("&nbsp;+&nbsp;");
+    expandIcon.text("-+-");
     expandIcon.addClass("expand-icon");
 
     content.append(expandIcon);
     content.append(name);
     content.append("<ul></ul>");
-    content.addClass("tree-view-content");
+    content.addClass("tree-view-content collapsed");
     return content;
 }
 
@@ -45,12 +45,25 @@ function addChildWidgets(parent, children)
 
 populateTreeViewWidget();
 
-treeViewWidgetElement.on("click", function(event)
+treeViewWidgetElement.on("click", ".expand-icon", function()
 {
-    var target = event.target;
-    target = $(target);
-    if(target.hasClass("expand-icon"))
-    {
-        target.parent().children("ul").addClass("expanded");
-    }
+    var element = $(this);
+    var treeItemWidget = element.parent();
+    toggleExpandedState(treeItemWidget);
 });
+
+function toggleExpandedState(element)
+{
+    if(element.hasClass("expanded"))
+    {
+        element.removeClass("expanded");
+        element.addClass("collapsed");
+        element.children(".expand-icon").text("-+-");
+    }
+    else
+    {
+        element.addClass("expanded");
+        element.removeClass("collapsed");
+        element.children(".expand-icon").text("---");
+    }
+}
